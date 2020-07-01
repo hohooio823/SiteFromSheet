@@ -10,10 +10,10 @@ const preview = async (link)=>{
         .then((data)=>{
             data.map((ele)=>{
                 if(ele.tag==='image'){
-                    elements= [...elements,`<img src=${ele.value} />`]
+                    elements= [...elements,`<img class='row' src=${ele.value} />`]
                 }
                 if(ele.tag==='title'){
-                elements= [...elements,`<h1>${ele.value}</h1>`]
+                elements= [...elements,`<h1 class='row' >${ele.value}</h1>`]
                 }
             })
             resolve(elements)

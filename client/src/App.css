@@ -1,4 +1,29 @@
-*{
+.App{
+    padding: 2vh 1vw 1vh 1vw;
+    flex-direction: row;
+}
+.main{
+    flex-direction: column;
+    align-items: center;
+}
+.review{
     text-align: center;
     justify-content: center;
+}
+.review.d-flex {
+    flex-direction: column;
+}
+input{
+    padding-left:1vw;
+}
+.btn {
+    background-color: #f05d5e;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: #ffcece!important;
+}
+.close{
+    width: fit-content;
+    margin-left: 1vw;
 }

@@ -18,10 +18,11 @@ app.post('/preview',async (req,res)=>{
     res.send(response)
 })
 app.post('/download',async (req,res)=>{
+    const filename = 'index.html'
     const response = await preview(req.body.link)
-    await fs.promises.writeFile('txt.html',download(response),(err)=>console.log(err))
-    res.sendFile(path.join(__dirname, '/txt.html'))
-    res.on('finish',()=>{fs.unlinkSync('txt.html')})
+    await fs.promises.writeFile(filename,download(response),(err)=>console.log(err))
+    res.sendFile(path.join(__dirname, filename))
+    res.on('finish',()=>{fs.unlinkSync(filename)})
 })
 
 
