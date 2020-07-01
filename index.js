@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const { preview , download } = require('./Middlewares/index.js');
 
 const app = express()
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -12,7 +13,9 @@ app.use(bodyParser.urlencoded({
 
 const port = process.env.PORT || 5000
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
 app.post('/preview',async (req,res)=>{
     const response = await preview(req.body.link)
     res.send(response)
