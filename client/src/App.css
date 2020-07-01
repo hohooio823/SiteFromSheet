@@ -6,6 +6,15 @@
     flex-direction: column;
     align-items: center;
 }
+.guide{
+    background-color: #5df0c7;
+    padding: 0.25vh 0.25vw 0.25vh 0.25vw;
+}
+a{
+    color:inherit;
+    text-decoration: inherit;
+    
+}
 .review{
     text-align: center;
     justify-content: center;
