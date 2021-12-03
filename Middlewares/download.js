@@ -12,7 +12,7 @@ const download = (response)=>{
     </head>
     <body>
         <div class='container align-items-center d-flex ' >
-            ${response.join("\n")}
+            ${response}
         </div>
     </body>
     </html>`)

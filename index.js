@@ -23,6 +23,7 @@ app.post('/preview',async (req,res)=>{
 app.post('/download',async (req,res)=>{
     const filename = 'index.html'
     const response = await preview(req.body.link)
+    console.log(response)
     await fs.promises.writeFile(filename,download(response),(err)=>console.log(err))
     res.sendFile(path.join(__dirname, filename))
     res.on('finish',()=>{fs.unlinkSync(filename)})

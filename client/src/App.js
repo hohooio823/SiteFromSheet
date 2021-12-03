@@ -16,7 +16,6 @@ const App = ()=>{
   const download = async()=>{
       axios({url: '/download',method: 'post',data:{link:link},responseType: 'blob'})
       .then((response) => {
-        console.log(response)
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const linkEle = document.createElement('a');
         linkEle.href = url;
@@ -36,7 +35,7 @@ const App = ()=>{
     <div className="App ">
       <div className={'container justify-content-center main '+page}>
         <div className="row d-flex w-100"><h1 className='col-12 text-center mb-4 font-weight-bold head'>Site From Sheet <span role='img'>📝</span></h1></div>
-        <div className="row d-flex w-100 pl-md-5 ml-md-5"><div className='col-12 mb-2 text-center text-md-left ml-md-5'>If you don't know what this is , 
+        <div className="row d-flex w-100 pl-md-5 ml-md-5"><div className='col-12 mb-2 text-center text-md-left ml-md-5'>If you don't know what this is, 
         check out <span className='guide'><a href="https://github.com/hohooio823/SiteFromSheet" target="_blank" >The guide</a></span></div>
         </div>
         <div className="row d-flex w-75 justify-content-between">
